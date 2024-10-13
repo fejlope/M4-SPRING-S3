@@ -6,18 +6,18 @@ import jakarta.validation.constraints.Positive;
 
 import java.math.BigDecimal;
 
-public class TransaccionDTO {
-    @NotNull(message = "Debe ingresar el número de cuenta")
-    @NotEmpty(message = "La cuenta no puede estar vacia")
+public class LogTransaccionesDTO {
+    @NotNull(message = "Número de cuenta invalido")
+    @NotEmpty(message = "Número de cuenta vacio")
     private String idCuenta;
 
-    @NotNull(message = "Debe ingresar el valor de la transacción")
-    @Positive(message = "El valor debe ser mayor a cero")
+    @NotNull(message = "Valor de la transacción invalido")
+    @Positive(message = "Valor invalido. Debe ser superior a 0 (cero)")
     private BigDecimal monto;
     private String descripcionTransaccion;
 
 
-    public TransaccionDTO(String idCuenta, BigDecimal monto, String descripcionTransaccion) {
+    public LogTransaccionesDTO(String idCuenta, BigDecimal monto, String descripcionTransaccion) {
         this.idCuenta = idCuenta;
         this.monto = monto;
         this.descripcionTransaccion = descripcionTransaccion;
@@ -25,6 +25,7 @@ public class TransaccionDTO {
 
     public String getIdCuenta() {
         return idCuenta;
+
     }
 
     public void setIdCuenta(String idCuenta) {
